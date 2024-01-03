@@ -11,7 +11,7 @@ export async function playerAddByGroup(
   try {
     const storedPlayers = await playerGetByGroup(group);
 
-    const playerAlreadyExists = storedPlayers.filter(players => playerAddByGroup.name === newPlayer.name)
+    const playerAlreadyExists = storedPlayers.filter(players => players.name === newPlayer.name)
 
     if(playerAlreadyExists.length > 0) {
       throw new AppError("Essa pessoa já está adicionada em um time aqui.");
